@@ -17,11 +17,10 @@ const server = require('http').createServer(app);
 const PORT = 5001;
 const io = require('socket.io')(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: ["http://localhost:3000","https://chat-app.onrender.com"],
     methods: ['GET', 'POST']
   }
 })
-
 
 async function getLastMessagesFromRoom(room){
   let roomMessages = await Message.aggregate([
