@@ -17,7 +17,7 @@ const server = require('http').createServer(app);
 const PORT = process.env.PORT || 5001;
 const io = require('socket.io')(server, {
   cors: {
-    origin: ["http://localhost:3000","https://chat-app-dnur.onrender.com"],
+    origin: ["http://localhost:3000",`${process.env.CHAT_APP_CLIENT_URL}`],
     methods: ['GET', 'POST']
   }
 })
